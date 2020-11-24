@@ -9,6 +9,8 @@ import Resume from './Components/Resume';
 import Contact from './Components/Contact';
 import Testimonials from './Components/Testimonials';
 import Portfolio from './Components/Portfolio';
+import Project from './Components/Project';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 
 class App extends Component {
@@ -45,15 +47,27 @@ class App extends Component {
 
   render() {
     return (
+      <Router>
       <div className="App">
-        <Header data={this.state.resumeData.main}/>
-        <About data={this.state.resumeData.main}/>
-        <Resume data={this.state.resumeData.resume}/>
-        <Portfolio />
-        <Testimonials data={this.state.resumeData.testimonials}/>
-        <Contact data={this.state.resumeData.main}/>
-        <Footer data={this.state.resumeData.main}/>
+       
+        <Switch>
+          
+          <Route path="/project">
+            <Project />
+        
+          </Route>       
+          <Route path="/">
+          <Header data={this.state.resumeData.main}/>
+          <About data={this.state.resumeData.main}/>
+          <Resume data={this.state.resumeData.resume}/>
+          <Portfolio />
+          <Testimonials data={this.state.resumeData.testimonials}/>
+          <Contact data={this.state.resumeData.main}/>
+          <Footer data={this.state.resumeData.main}/>
+          </Route>
+        </Switch>
       </div>
+      </Router>
     );
   }
 }

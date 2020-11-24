@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import { Link } from "react-router-dom";
 
 class Portfolio extends Component {
 
@@ -33,10 +34,16 @@ class Portfolio extends Component {
   render() {
     const { works } = this.state;
     if(this.state.works){
-      var projects =  works.map((projects) => 
+      var projects =  works.map((projects,i) => 
        <div key={projects.title} className="columns portfolio-item">
            <div className="item-wrap">
-            <a href={projects.projectId} title={projects.title}>
+           <Link to={{
+              pathname: '/project',
+              state: {
+                project: projects
+              }
+            }}
+           >
                <img alt={projects.title} src={projects.imgOne} />
                <div className="overlay">
                   <div className="portfolio-item-meta">
@@ -45,7 +52,7 @@ class Portfolio extends Component {
                   </div>
                 </div>
               <div className="link-icon"><i className="fa fa-link"></i></div>
-            </a>
+            </Link>
           </div>
         </div>
       )
