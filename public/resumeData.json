@@ -4,7 +4,7 @@
     "occupation": "Software Developer && Computer Technician",
     "description": "I am a Freelancer and Founder of TekPlanet",
     "image": "profile.png",
-    "bio": "My name is Shefiu, I'm a Full Stack Developer. Currently I'm working as an IT IT Engineer Port PortHarcourt Chamber of Commerce and I freelance on fiveer and Upwork",
+    "bio": "Hello, I am Oluwabi Shefiu, I am a Software Developer and I specializes in developing web and mobile applications using programing language like Java, PHP, Java script, Frame work I have worked with includes React Js, React Native, Laravel Materia UI etc.. Hit the Hire button and let transform your idea into fully functioning application of your choice.",
     "contactmessage": "Get in touch with me to receive further details, get coached or anything else.",
     "email": "techplanet49@gmail.com",
     "phone": "+2349060533036",
@@ -19,17 +19,17 @@
     "social": [
       {
         "name": "facebook",
-        "url": "https://www.facebook.com/sonny.sangha.3",
+        "url": "#",
         "className": "fa fa-facebook"
       },
       {
         "name": "linkedin",
-        "url": "https://www.linkedin.com/in/saajansangha/",
+        "url": "#",
         "className": "fa fa-linkedin"
       },
       {
         "name": "instagram",
-        "url": "https://www.instagram.com/ssssangha/",
+        "url": "#",
         "className": "fa fa-instagram"
       },
       {

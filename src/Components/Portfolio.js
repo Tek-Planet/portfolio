@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import { Link } from "react-router-dom";
+import './Portfolio.css'
 
 class Portfolio extends Component {
 
@@ -8,16 +9,15 @@ class Portfolio extends Component {
     super(props);
     this.state = {
       works: []
-    };
-
-  }
-
+    }; }
+  
     // method tyo search movie
    fetchData () {
-      const url = (`https://us-central1-tek-portfolio.cloudfunctions.net/api/projects`);
+      const url = (`https://us-central1-tekplanet-fa1ec.cloudfunctions.net/api/projects`);
             axios.
             get(url)
              .then(res => {
+      
                this.setState({
                  works: res.data,
                })
@@ -44,7 +44,7 @@ class Portfolio extends Component {
               }
             }}
            >
-               <img alt={projects.title} src={projects.imgOne} />
+              <img alt={projects.title} src={projects.img} className='project__image' />
                <div className="overlay">
                   <div className="portfolio-item-meta">
                  <h5>{projects.title}</h5>
