@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactGA from 'react-ga';
 import $ from 'jquery';
-import './App.css';
+
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import About from './Components/About';
@@ -10,6 +10,7 @@ import Contact from './Components/Contact';
 import Testimonials from './Components/Testimonials';
 import Portfolio from './Components/Portfolio';
 import Project from './Components/Project';
+import Payment from './Components/Payment';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 
@@ -53,7 +54,7 @@ class App extends Component {
         <Switch>
           
           <Route path="/project">
-            <Project />
+            <Payment />
         
           </Route>       
           <Route path="/">
@@ -63,6 +64,7 @@ class App extends Component {
           <Portfolio />
           <Testimonials data={this.state.resumeData.testimonials}/>
           <Contact data={this.state.resumeData.main}/>
+          
           <Footer data={this.state.resumeData.main}/>
           </Route>
         </Switch>
