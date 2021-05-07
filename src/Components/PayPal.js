@@ -1,7 +1,7 @@
-import React, { useRef, useEffect } from "react";
-
-export default function Paypal({amount}) {
- 
+import React, { useRef, useEffect, useState } from "react";
+import './PayPal.css'
+export default function Paypal({amount, description}) {
+  const [status, setStatus] = useState('null');
   const paypal = useRef();
 
   useEffect(() => {
@@ -12,7 +12,7 @@ export default function Paypal({amount}) {
             intent: "CAPTURE",
             purchase_units: [
               {
-                description: "Cool looking table",
+                description: description,
                 amount: {
                   currency_code: "USD",
                   value: amount,
@@ -24,6 +24,7 @@ export default function Paypal({amount}) {
         onApprove: async (data, actions) => {
           const order = await actions.order.capture();
           console.log(order);
+          setStatus(order.status)
         },
         onError: (err) => {
           console.log(err);
@@ -35,6 +36,18 @@ export default function Paypal({amount}) {
   return (
     <div>
       <div ref={paypal}></div>
+      <div className='payment__complete'>
+      {status === 'COMPLETED' ? (
+      
+              <p className='completed'>Payment {status}. Thank You For Trusting Us.</p>
+          
+      ) : (
+        status !== 'null' ? (
+          <p className='failed' >Payment {status}.</p>
+        ) :  <p></p>
+      )  
+      }
+       </div>
     </div>
   );
 }

@@ -54,7 +54,7 @@ class App extends Component {
         <Switch>
           
           <Route path="/project">
-            <Payment />
+            <Project />
         
           </Route>       
           <Route path="/">
@@ -63,8 +63,8 @@ class App extends Component {
           <Resume data={this.state.resumeData.resume}/>
           <Portfolio />
           <Testimonials data={this.state.resumeData.testimonials}/>
-          <Contact data={this.state.resumeData.main}/>
-          
+          <Contact data={this.state.resumeData.main}/>  
+          <Payment />       
           <Footer data={this.state.resumeData.main}/>
           </Route>
         </Switch>

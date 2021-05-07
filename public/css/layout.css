@@ -242,6 +242,17 @@ ul#nav li.current a { color: #F06000; }
    overflow: hidden;
 }
 
+
+#payment {
+   background: #fff;
+   padding-top: 90px;
+
+ 
+
+ 
+ 
+}
+
 #resume a, #resume a:visited  { color: #11ABB0; }
 #resume a:hover, #resume a:focus { color: #313131; }
 
